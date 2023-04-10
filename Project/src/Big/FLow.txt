@@ -1,0 +1,27 @@
+HyundaiAlcazar
+HyundaiCreta
+HyundaiVerna
+
+MarutiSuzukiSwift
+MarutiSuzukiBaleno
+MarutoSuzukiErtiga
+
+MahindraThar
+MahindraXUV700
+
+TataNexon
+TataHarrier
+TataSafari
+
+ToyotaFortuner
+MGHector
+HondaCity
+KiaCarens
+
+
+
+New Specifications Needed
+    1. Discount after Billing
+    2. Fuel Type mapping
+    3. Increase numbers of Cars
+
