@@ -1,5 +1,3 @@
-
-
 abstract class Car {
     protected double rate;
     public String color;
