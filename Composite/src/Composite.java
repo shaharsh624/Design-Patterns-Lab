@@ -21,11 +21,10 @@ class Composite implements Component{
 
     public void showPrice(){
         System.out.println("\nComposite -> " + name + " : Price " + getPrice());
-        System.out.println("Leaf of " + name + "\n[");
+        System.out.println("Leaf of " + name);
         for (Component c : components){
             c.showPrice();
         }
-        System.out.println("]");
     }
 
 }

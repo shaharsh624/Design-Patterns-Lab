@@ -11,7 +11,7 @@ class Leaf implements Component {
         this.price = price;
     }
     public void showPrice(){
-        System.out.println("Leaf -> " + name + " : " + price);
+        System.out.println("\t-> " + name + " : " + price);
     }
     public int getPrice() {
         return price;

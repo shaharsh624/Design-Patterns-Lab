@@ -53,7 +53,7 @@ class Car {
         this.speed = 0;
         this.gear = 0;
         this.maxGear = maxGear;
-        this.state = new ParkedState();
+        this.state = new ParkedState(); // By Default every is car is in Parked State
     }
 
     public void changeGear() {

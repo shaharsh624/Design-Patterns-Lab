@@ -13,15 +13,11 @@ class AACPlayer implements AdvanceMediaPlayer {
     public void playAAC(String audioType, String fileName) {
         System.out.println("Playing " + fileName + "." + audioType);
     }
-    public void playWAV(String audioType, String fileName) {
-        // Do Nothing
-    }
+    public void playWAV(String audioType, String fileName) {}
 }
 
 class WAVPlayer implements AdvanceMediaPlayer {
-    public void playAAC(String audioType, String fileName) {
-        // Do Nothing
-    }
+    public void playAAC(String audioType, String fileName) {}
     public void playWAV(String audioType, String fileName) {
         System.out.println("Playing " + fileName + "." + audioType);
     }

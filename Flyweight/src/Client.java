@@ -55,5 +55,6 @@ public class Client {
 
         car1.getInfo("John", "London", 6000);
         car2.getInfo("Jane", "Canada", 3000);
+        car2.getInfo("Andrew", "New York", 5000);
     }
 }
