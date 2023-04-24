@@ -20,7 +20,7 @@ public class MVCDemo {
     private static Car retrieveCarFromDatabase() {
         Car car = new Car();
 
-        String url = "jdbc:mysql://localhost:3306/DMBS_LAB?useSSL=false";
+        String url = "jdbc:mysql://localhost:3306/DP_LAB?useSSL=false";
         String username = "root";
         String password = "pavilion";
 
