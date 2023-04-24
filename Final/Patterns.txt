@@ -1,0 +1,16 @@
+Factory method
+Builder method
+Prototype method
+Abstract Factory method
+Singleton method
+Composite design pattern
+Adapter design pattern
+Facade design pattern
+Flyweight design pattern
+Decorator design pattern
+Proxy design pattern
+State design pattern
+Iterator design pattern
+Memento design pattern
+Observer design pattern
+Model View Controller
