@@ -1,14 +1,22 @@
+CREATIONAL
+
 Factory method
 Builder method
 Prototype method
 Abstract Factory method
 Singleton method
+
+STRUCTURAL
+
 Composite design pattern
 Adapter design pattern
 Facade design pattern
 Flyweight design pattern
 Decorator design pattern
 Proxy design pattern
+
+BEHAVIOURAL
+
 State design pattern
 Iterator design pattern
 Memento design pattern
