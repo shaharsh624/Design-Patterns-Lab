@@ -1,4 +1,3 @@
-
 public class SynchronizedGetInstance {
     public static void main(String[] args) {
         Thread t1 = new Thread(new Runnable() {
@@ -8,7 +7,7 @@ public class SynchronizedGetInstance {
         });
         Thread t2 = new Thread(new Runnable() {
             public void run() {
-                Ferrari obj = Ferrari.getInstance();
+                Ferrari obj2 = Ferrari.getInstance();
             }
         });
         t1.start();
@@ -17,14 +16,15 @@ public class SynchronizedGetInstance {
 }
 
 class Ferrari {
-    public static Ferrari obj;
-    private Ferrari(){
-        System.out.println("Ferrari F8: 40200000");
+    private static volatile Ferrari obj;
+    private Ferrari() {
+        System.out.println("Ferrari F8: $40200");
     }
     public static Ferrari getInstance(){
         if (obj == null){
             synchronized (Ferrari.class) {
                 if (obj == null) {
+                    System.out.println("Created new object!");
                     obj = new Ferrari();
                 }
             }

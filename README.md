@@ -19,6 +19,6 @@ Design-patterns covered:
  
  - **Behavioural (ongoing)**
    - State design pattern
-   - Iterator design pattern
-   - Memento design pattern
+   - Car.Car.Car.Car.Car.Car.Car.Car.Iterator design pattern
+   - General.Memento design pattern
    - Observer design pattern

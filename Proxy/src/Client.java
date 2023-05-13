@@ -14,9 +14,6 @@ class RealCar implements Car {
 class CarProxy implements Car {
     private RealCar realCar;
     private boolean isCarReady;
-    private int fuelLevel;
-    private int tirePressure;
-    private int engineTemperature;
 
     public void start() {
         if (realCar == null) {
@@ -30,9 +27,9 @@ class CarProxy implements Car {
     private boolean isCarReady() {
         if (!isCarReady) {
             System.out.println("Checking the car's status...");
-            fuelLevel = checkFuelLevel();
-            tirePressure = checkTirePressure();
-            engineTemperature = checkEngineTemperature();
+            int fuelLevel = checkFuelLevel();
+            int tirePressure = checkTirePressure();
+            int engineTemperature = checkEngineTemperature();
             isCarReady = fuelLevel > 0 && tirePressure > 0 && engineTemperature < 100;
         }
         return isCarReady;

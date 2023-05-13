@@ -1,8 +1,6 @@
-
 public class SingleTonEnum {
     public static void main(String[] args) {
         Mercedes obj1 = Mercedes.INSTANCE;
-
         obj1.setI(4200000);
         System.out.println("Price of Mercedes-Benz A-Class: " + obj1.getI());
 

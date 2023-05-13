@@ -1,0 +1,35 @@
+CREATIONAL
+
+Factory method ✅
+Builder method ✅
+Prototype method ✅
+Abstract Factory method ✅
+Singleton method ✅
+
+STRUCTURAL
+
+Composite design pattern ✅ ✅
+Adapter design pattern ✅
+Facade design pattern ✅ ✅
+Flyweight design pattern ✅
+Decorator design pattern ✅ ✅
+Proxy design pattern ❌
+
+BEHAVIOURAL
+
+State design pattern ✅
+Car.Car.Car.Car.Car.Car.Car.Car.Iterator design pattern ✅ ✅
+General.Memento design pattern ✅ ✅
+Observer design pattern ✅
+Model View Controller ❌
+
+
+
+
+
+CLASS DIAGRAM
++ public
+- private
+# protected
+_ static
+A final

@@ -1,4 +1,3 @@
-
 public class SingleTon {
     public static void main(String[] args) {
         Audi obj1 = Audi.getInstance();
@@ -6,12 +5,12 @@ public class SingleTon {
     }
  }
 
- class Audi {
+class Audi {
     private static Audi obj = new Audi();
-    private Audi(){
+    private Audi() {
         System.out.println("This is Audi Q3");
     }
-    public static Audi getInstance(){
+    public static Audi getInstance() {
         return obj;
     }
- }
+}

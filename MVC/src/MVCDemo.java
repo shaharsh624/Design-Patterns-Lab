@@ -12,7 +12,7 @@ public class MVCDemo {
         controller.updateView();
 
         // Update model data
-        controller.setName("Tata Nexon EV");
+        controller.setName("Tata Safari EV");
         controller.setEngine("1.5L");
         controller.updateView();
     }
@@ -22,7 +22,7 @@ public class MVCDemo {
 
         String url = "jdbc:mysql://localhost:3306/DP_LAB?useSSL=false";
         String username = "root";
-        String password = "pavilion";
+        String password = "***";
 
         try (Connection conn = DriverManager.getConnection(url, username, password)) {
             System.out.println("Connected to database!");
@@ -30,13 +30,11 @@ public class MVCDemo {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM CARS");
 
-            int count = 1;
             while (resultSet.next()) {
                 String name = resultSet.getString("CAR_NAME");
                 String engine = resultSet.getString("CAR_ENGINE");
                 car.setName(name);
                 car.setEngine(engine);
-                count++;
             }
         } catch (SQLException ex) {
             System.err.println("Error connecting to database: " + ex.getMessage());

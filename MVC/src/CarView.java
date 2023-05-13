@@ -1,3 +1,5 @@
+package Car;
+
 public class CarView {
     public void printCarDetails(String carName, String carEngine) {
         System.out.println("\nCar: ");

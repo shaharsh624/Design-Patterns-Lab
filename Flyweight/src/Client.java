@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 // Flyweight interface
 interface Car {
@@ -8,20 +7,20 @@ interface Car {
 
 // Concrete flyweight class
 class CarModel implements Car {
-    private String make;
-    private String model;
-    private int year;
-    private String color;
+    private final String brand;
+    private final String model;
+    private final int year;
+    private final String color;
 
-    public CarModel(String make, String model, int year, String color) {
-        this.make = make;
+    public CarModel(String brand, String model, int year, String color) {
+        this.brand = brand;
         this.model = model;
         this.year = year;
         this.color = color;
     }
     
     public void getInfo(String owner, String location, int mileage) {
-        System.out.println("\nCar Model: " + make + " " + model + " " + year + " " + color);
+        System.out.println("\nCar Model: " + brand + " " + model + " " + year + " " + color);
         System.out.println("Current owner: " + owner);
         System.out.println("Current location: " + location);
         System.out.println("Current mileage: " + mileage);
@@ -45,16 +44,17 @@ class CarFactory {
 // Client code
 public class Client {
     public static void main(String[] args) {
-        Car car1 = CarFactory.getCarModel("Toyota", "Fortuner", 2021, "Red");
-        Car car2 = CarFactory.getCarModel("Toyota", "Camry", 2021, "Red");
+        Car carModel1 = CarFactory.getCarModel("Toyota", "Fortuner", 2021, "Red");
+        Car carModel2 = CarFactory.getCarModel("Toyota", "Camry", 2021, "Red");
+        Car carModel3 = CarFactory.getCarModel("Toyota", "Camry", 2021, "Red");
 
-        // Both car1 and car2 will reference the same CarModel object
-        if (car1 == car2) {
-            System.out.println("Car1 and Car2 reference the same CarModel object");
+        // Both carModel1 and carModel2 will reference the same CarModel object
+        if (carModel2 == carModel3) {
+            System.out.println("Car2 and Car3 reference the same CarModel object.");
         }
 
-        car1.getInfo("John", "London", 6000);
-        car2.getInfo("Jane", "Canada", 3000);
-        car2.getInfo("Andrew", "New York", 5000);
+        carModel1.getInfo("John", "London", 6000);
+        carModel2.getInfo("Jane", "Canada", 3000);
+        carModel3.getInfo("Andrew", "New York", 5000);
     }
 }

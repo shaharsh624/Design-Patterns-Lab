@@ -1,0 +1,984 @@
+CREATIONAL
+-------------------------------------- FACTORY --------------------------------------
+
+public interface Burger {
+    void prepare();
+}
+public class Restaurant {
+    public static void main(String[] args) {
+        BurgerFactory factory = new BurgerFactory();
+
+        Burger b1 = factory.getBurger("VeggieBurger");
+        b1.prepare();
+    }
+}
+public class BurgerFactory {
+    public Burger getBurger (String burger){
+        if (burger == null) {
+            return null;
+        } else if(burger.equalsIgnoreCase("BeefBurger")) {
+            return new BeefBurger();
+        } else if(burger.equalsIgnoreCase("ChickenBurger")) {
+            return new ChickenBurger();
+        } else if(burger.equalsIgnoreCase("VeggieBurger")) {
+            return new VeggieBurger();
+        }
+        return null;
+    }
+}
+public class BeefBurger implements Burger {
+    public void prepare() {
+        System.out.println("Preparing Beef Burger");
+    }
+}
+public class ChickenBurger implements Burger {
+    public void prepare() {
+        System.out.println("Preparing Chicken Burger");
+    }
+}
+public class VeggieBurger implements Burger {
+    public void prepare() {
+        System.out.println("Preparing Veggie Burger");
+    }
+}
+
+-------------------------------------- ABSTRACT FACTORY --------------------------------------
+public abstract class ColorCar.AbstractFactory {
+    abstract ColorCar.Color getColor(String color);
+    abstract ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car getCar(String carName);
+}
+public class ColorCar.White extends ColorCar.Color {
+    public void getColor(){
+        hexCode = "#FFFFFF";
+        System.out.println("Hex Code: "+hexCode);
+    }
+}
+public class ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Swift extends ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car {
+    public void getPrice() {
+        rate = 500000;
+        System.out.println("Rate for ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Swift: " + rate);
+    }
+}
+public class ColorCar.Red extends ColorCar.Color {
+    public void getColor(){
+        hexCode = "#FF0000";
+        System.out.println("Hex Code: "+hexCode);
+    }
+}
+public class ColorCar.Producer {
+    public static ColorCar.AbstractFactory getFactory(String choice){
+        if (choice.equals("ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car")){
+            return new ColorCar.CarFactory();
+        }
+        else if (choice.equals("ColorCar.Color")){
+            return new ColorCar.ColourFactory();
+        }
+        return null;
+    }
+}
+abstract class ColorCar.Color {
+    protected String hexCode;
+    abstract void getColor();
+}
+public class ColorCar.CarFactory extends ColorCar.AbstractFactory{
+    public ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car getCar(String carName){
+        if (carName == null){
+            return null;
+        }
+        if (carName.equalsIgnoreCase("ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Alcazar")){
+            return new ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Alcazar();
+        }
+        else if (carName.equalsIgnoreCase("ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Swift")){
+            return new ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Swift();
+        }
+        return null;
+    }
+    ColorCar.Color getColor(String color) {
+        return null;
+    }
+}
+public class ColorCar.ColourFactory extends ColorCar.AbstractFactory{
+    public ColorCar.Color getColor(String color){
+        if (color == null){
+            return null;
+        }
+        if (color.equalsIgnoreCase("ColorCar.Red")){
+            return new ColorCar.Red();
+        }
+        else if (color.equalsIgnoreCase("ColorCar.White")){
+            return new ColorCar.White();
+        }
+        return null;
+    }
+    ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car getCar(String carName) {
+        return null;
+    }
+}
+import java.util.*;
+
+public class ColorCar.Demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car name[ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Alcazar, ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Swift]: ");
+        String carName = sc.nextLine();
+        System.out.print("Enter the ColorCar.Color[ColorCar.White, ColorCar.Red]: ");
+        String color = sc.nextLine();
+
+        ColorCar.AbstractFactory carFactory = ColorCar.Producer.getFactory("ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car");
+        assert carFactory != null;
+        ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car car1 = carFactory.getCar(carName);
+        car1.getPrice();
+
+        ColorCar.AbstractFactory colorFactory = ColorCar.Producer.getFactory("ColorCar.Color");
+        assert colorFactory != null;
+        ColorCar.Color color1 = colorFactory.getColor(color);
+        color1.getColor();
+    }
+}
+
+
+-------------------------------------- BUILDER --------------------------------------
+public class Phone {
+    private String os;
+    private String battery;
+    private String processor;
+
+    public Phone(String os, String battery, String processor) {
+        this.os = os;
+        this.battery = battery;
+        this.processor = processor;
+    }
+
+    @Override
+    public String toString() {
+        return "\nPhone {" +
+                "\n\tOS: '" + os + '\'' +
+                ",\n\tBattery: '" + battery + '\'' +
+                ",\n\tProcessor: '" + processor + '\'' +
+                "\n}";
+    }
+}
+public class PhoneBuilder {
+    private String os;
+    private String battery;
+    private String processor;
+
+    public PhoneBuilder setOs(String os) {
+        this.os = os;
+        return this;
+    }
+
+    public PhoneBuilder setBattery(String battery) {
+        this.battery = battery;
+        return this;
+    }
+
+    public PhoneBuilder setProcessor(String processor) {
+        this.processor = processor;
+        return this;
+    }
+
+    public Phone getPhone() {
+        return new Phone(os, battery, processor);
+    }
+}
+public class Client {
+    public static void main(String[] args) {
+        PhoneBuilder builder1 = new PhoneBuilder()
+                .setOs("Oxygen OS")
+                .setBattery("4500 mAh")
+                .setProcessor("Snapdragon 8 Gen 2");
+        Phone p1 = builder1.getPhone();
+        System.out.println(p1);
+
+        PhoneBuilder builder2 = new PhoneBuilder()
+                .setOs("One UI")
+                .setBattery("4000 mAh")
+                .setProcessor("Snapdragon 7 Gen 1");
+        Phone p2 = builder2.getPhone();
+        System.out.println(p2);
+    }
+}
+
+
+
+
+-------------------------------------- PROTOTYPE --------------------------------------
+public class Book {
+    int bookId;
+    String bookName;
+
+    public int getBookId() {
+        return bookId;
+    }
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
+    }
+    public String getBookName() {
+        return bookName;
+    }
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+    @Override
+    public String toString() {
+        return "\n\tBook{ " +
+                "bookId=" + bookId +
+                ", bookName='" + bookName + '\'' +
+                " }";
+    }
+}
+import java.util.*;
+
+public class BookShop implements Cloneable {
+    String ShopName;
+    List<Book> books = new ArrayList<>();
+
+    public String getShopName() {
+        return ShopName;
+    }
+
+    public void setShopName(String shopName) {
+        ShopName = shopName;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+    @Override
+    public String toString() {
+        return "\nBookShop{ " +
+                "ShopName='" + ShopName + '\'' +
+                ",\nbooks=" + books +
+                "\n}";
+    }
+
+    public void loadData() {
+        for (int i=1; i<=5 ; i++) {
+            Book b = new Book();
+            b.setBookId(i);
+            b.setBookName("Book " + i);
+            getBooks().add(b);
+
+        }
+    }
+
+    @Override
+    protected Object clone() {
+        BookShop bs = new BookShop();
+        for (Book book : this.getBooks()) {
+            bs.getBooks().add(book);
+        }
+        return bs;
+    }
+}
+public class MediaPlayer.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Main {
+    public static void main(String[] args) {
+        // Book Shop 1
+        BookShop bs1 = new BookShop();
+        bs1.setShopName("Aadinath Stationary");
+        bs1.loadData();
+
+        // Book Shop 2
+        BookShop bs2 = (BookShop)bs1.clone();
+        bs2.setShopName("Parshwanath Stationary");
+
+        // Remove Book
+        bs1.getBooks().remove(2);
+
+        // Book Shop 3
+        BookShop bs3 = (BookShop)bs1.clone();
+        bs3.setShopName("Munisuvrat Stationary");
+
+        // Remove Book
+        bs2.getBooks().remove(3);
+
+        System.out.println(bs1);
+        System.out.println(bs2);
+        System.out.println(bs3);
+    }
+}
+
+
+
+-------------------------------------- SINGLETON --------------------------------------
+public class SynchronizedGetInstance {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new Runnable() {
+            public void run() {
+                Ferrari obj = Ferrari.getInstance();
+            }
+        });
+        Thread t2 = new Thread(new Runnable() {
+            public void run() {
+                Ferrari obj2 = Ferrari.getInstance();
+            }
+        });
+        t1.start();
+        t2.start();
+    }
+}
+
+class Ferrari {
+    private static volatile Ferrari obj;
+    private Ferrari() {
+        System.out.println("Ferrari F8: $40200");
+    }
+    public static Ferrari getInstance(){
+        if (obj == null){
+            synchronized (Ferrari.class) {
+                if (obj == null) {
+                    System.out.println("Created new object!");
+                    obj = new Ferrari();
+                }
+            }
+        }
+        return obj;
+    }
+}
+
+
+
+STRUCTURAL
+
+-------------------------------------- COMPOSITE --------------------------------------
+import java.util.*;
+
+interface Component {
+    public void showPrice();
+}
+
+class Composite implements Component {
+    String name;
+    List<Component> components = new ArrayList<>();
+
+    public Composite(String name) {
+        this.name = name;
+    }
+    public void addComponent(Component c) {
+        components.add(c);
+    }
+    public void showPrice() {
+        System.out.println("Composite: " + name);
+        for (Component c : components) {
+            c.showPrice();
+        }
+    }
+}
+
+class Leaf implements Component {
+    int price;
+    String name;
+    public Leaf(String name, int price) {
+        this.price = price;
+        this.name = name;
+    }
+    public void showPrice() {
+        System.out.println("\tLeaf: " + name + ": " + price);
+    }
+}
+
+public class ColorCar.Demo {
+    public static void main(String[] args) {
+        Leaf hd = new Leaf("HDD", 5000);
+        Leaf mouse = new Leaf("Mouse", 400);
+        Leaf monitor = new Leaf("Monitor", 9000);
+        Leaf ram = new Leaf("Ram", 3500);
+        Leaf cpu = new Leaf("CPU", 9800);
+
+        Composite ph = new Composite("Peripheral");
+        Composite cabinet = new Composite("Cabinet");
+        Composite mb = new Composite("Motherboard");
+        Composite computer = new Composite("Computer");
+
+        mb.addComponent(cpu);
+        mb.addComponent(ram);
+
+        ph.addComponent(mouse);
+        ph.addComponent(monitor);
+
+        cabinet.addComponent(hd);
+        cabinet.addComponent(mb);
+
+        computer.addComponent(ph);
+        computer.addComponent(cabinet);
+
+        computer.showPrice();
+    }
+}
+
+-------------------------------------- FACADE --------------------------------------
+public class Restaurant {
+    public void prepareFood(int orderNo){
+        System.out.println("\nPreparing Order " + orderNo);
+        System.out.println("Prepared Order " + orderNo);
+    }
+}
+public class DeliveryPartner {
+    public void assignDeliveryBoy(int orderNo){
+        String boyName = "Ashok";
+        System.out.printf("%s will pick Order %d\n" , boyName, orderNo);
+    }
+}
+public class DeliveryBoy {
+    String name = "Ashok";
+
+    public void pickupOrder(int orderNo){
+        System.out.println(name + " Picked Order " + orderNo);
+    }
+    public void deliverOrder(int orderNo){
+        System.out.println(name + " Delivered Order " + orderNo);
+    }
+}
+import java.util.*;
+
+public class ZomatoFacade {
+    private final Restaurant restaurant;
+    private final DeliveryPartner deliveryPartner;
+    private final DeliveryBoy deliveryBoy;
+
+    public ZomatoFacade() {
+        restaurant = new Restaurant();
+        deliveryPartner = new DeliveryPartner();
+        deliveryBoy = new DeliveryBoy();
+    }
+
+    public void orderFood(int orderNo){
+        List<Integer> orders = new ArrayList<>();
+        orders.add(orderNo);
+        restaurant.prepareFood(orderNo);
+        deliveryPartner.assignDeliveryBoy(orderNo);
+        deliveryBoy.pickupOrder(orderNo);
+        deliveryBoy.deliverOrder(orderNo);
+    }
+}
+public class MediaPlayer.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Main {
+    public static void main(String[] args) {
+        ZomatoFacade zomato = new ZomatoFacade();
+        zomato.orderFood(2);
+        zomato.orderFood(3);
+    }
+}
+
+
+-------------------------------------- FACADE --------------------------------------
+import java.util.*;
+
+// Flyweight interface
+interface ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car {
+    void getInfo(String owner, String location, int mileage);
+}
+
+// Concrete flyweight class
+class CarModel implements ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car {
+    private String make;
+    private String model;
+    private int year;
+    private String color;
+
+    public CarModel(String make, String model, int year, String color) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+    }
+
+    public void getInfo(String owner, String location, int mileage) {
+        System.out.println("\nCar Model: " + make + " " + model + " " + year + " " + color);
+        System.out.println("Current owner: " + owner);
+        System.out.println("Current location: " + location);
+        System.out.println("Current mileage: " + mileage);
+    }
+}
+
+// Flyweight factory
+class ColorCar.CarFactory {
+    private static Map<String, ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car> carModels = new HashMap<>();
+    public static ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car getCarModel(String make, String model, int year, String color) {
+        String key = make + model + year + color;
+        ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car carModel = carModels.get(key);
+        if (carModel == null) {
+            carModel = new CarModel(make, model, year, color);
+            carModels.put(key, carModel);
+        }
+        return carModel;
+    }
+}
+
+// Client code
+public class Client {
+    public static void main(String[] args) {
+        ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car carModel1 = ColorCar.CarFactory.getCarModel("Toyota", "Fortuner", 2021, "ColorCar.Red");
+        ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car carModel2 = ColorCar.CarFactory.getCarModel("Toyota", "Camry", 2021, "ColorCar.Red");
+
+        // Both carModel1 and carModel2 will reference the same CarModel object
+        if (carModel1 == carModel2) {
+            System.out.println("Car1 and Car2 reference the same CarModel object");
+        }
+
+        carModel1.getInfo("John", "London", 6000);
+        carModel2.getInfo("Jane", "Canada", 3000);
+        carModel2.getInfo("Andrew", "New York", 5000);
+    }
+}
+
+
+
+-------------------------------------- DECORATOR --------------------------------------
+public class BasePizza implements Pizza{
+    public String bake() {
+        return "Base Pizza";
+    }
+}
+public class CheeseBurstDecorator extends PizzaDecorator{
+    public CheeseBurstDecorator(Pizza pizza) {
+        super(pizza);
+    }
+    public String bake(){
+        return pizza.bake() + addCheese();
+    }
+    public String addCheese (){
+        return " + Cheese";
+    }
+}
+public class JalapenoDecorator extends PizzaDecorator{
+    public JalapenoDecorator(Pizza pizza) {
+        super(pizza);
+    }
+    public String bake(){
+        return pizza.bake() + addJalapeno();
+    }
+    public String addJalapeno(){
+        return " + Jalapeno";
+    }
+}
+public interface Pizza {
+    public String bake();
+}
+public class PizzaDecorator implements Pizza{
+     protected Pizza pizza;
+     public PizzaDecorator(Pizza pizza) {
+         this.pizza = pizza;
+     }
+     public String bake() {
+         return pizza.bake();
+     }
+}
+public class MediaPlayer.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Main {
+    public static void main(String[] args) {
+        Pizza pizza = new JalapenoDecorator(new CheeseBurstDecorator(new BasePizza()));
+        System.out.println("Your Pizza: " + pizza.bake());
+    }
+}
+
+
+-------------------------------------- ADAPTER --------------------------------------
+public class Customer {
+    public static void main(String[] args) {
+
+    Swiggy swiggy = new Swiggy();
+
+    FoodItem foodItem1 = new FoodItem("Cheeseburger", "$9.99", "Burger Joint");
+    FoodItem foodItem2 = new FoodItem("Margherita Pizza", "$14.50", "Pizza Palace");
+
+    swiggy.addItem(foodItem1);
+    swiggy.addItem(foodItem2);
+
+    GroceryProduct groceryProduct1 = new GroceryProduct("Milk", "$2.99", "SuperMart");
+    GroceryProduct groceryProduct2 = new GroceryProduct("Bread", "$3.49", "MarketBasket");
+
+    GroceryAdapter adapter1 = new GroceryAdapter(groceryProduct1);
+    GroceryAdapter adapter2 = new GroceryAdapter(groceryProduct2);
+
+    swiggy.addItem(adapter1);
+    swiggy.addItem(adapter2);
+    }
+}
+public class FoodItem implements Item{
+    String itemName;
+    String price;
+    String restaurantName;
+
+    public FoodItem(String itemName, String price, String restaurantName) {
+        this.itemName = itemName;
+        this.price = price;
+        this.restaurantName = restaurantName;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+    public String getPrice() {
+        return price;
+    }
+    public String getRestaurantName() {
+        return restaurantName;
+    }
+}
+public class GroceryAdapter implements Item{
+    private final GroceryItem groceryItem;
+
+    public GroceryAdapter(GroceryItem groceryItem) {
+        this.groceryItem = groceryItem;
+    }
+
+    public String getItemName() {
+        return groceryItem.getGroceryName();
+    }
+    public String getPrice() {
+        return groceryItem.getPrice();
+    }
+    public String getRestaurantName() {
+        return groceryItem.getGroceryStore();
+    }
+}
+public interface GroceryItem {
+    String getGroceryName();
+    String getPrice();
+    String getGroceryStore();
+}
+public class GroceryProduct implements GroceryItem {
+    String groceryName;
+    String price;
+    String groceryStore;
+
+    public GroceryProduct(String groceryName, String price, String groceryStore) {
+        this.groceryName = groceryName;
+        this.price = price;
+        this.groceryStore = groceryStore;
+    }
+
+    public String getGroceryName() {
+        return groceryName;
+    }
+    public String getPrice() {
+        return price;
+    }
+    public String getGroceryStore() {
+        return groceryStore;
+    }
+}
+public interface Item {
+    String getItemName();
+    String getPrice();
+    String getRestaurantName();
+}
+public class Swiggy {
+     List<Item> items = new ArrayList<>();
+     public void addItem(Item item) {
+         items.add(item);
+         System.out.println(
+                 "\nItem: " + item.getItemName() +
+                 "\nPrice: " + item.getPrice() +
+                 "\nStore: " + item.getRestaurantName()
+         );
+     }
+ }
+
+
+
+BEHAVIOURAL
+-------------------------------------- ADAPTER --------------------------------------
+public interface Car.Car.Car.Car.Car.Car.Car.Car.Iterator {
+    public boolean hasNext();
+    public Object next();
+}
+public interface Car.Car.Car.Car.Car.Car.Car.Car.Container {
+    public Car.Car.Car.Car.Car.Car.Car.Car.Iterator getIterator();
+}
+public class Car.Car.Car.Car.Car.Car.Car.Car.CarRepository implements Car.Car.Car.Car.Car.Car.Car.Car.Container {
+    public String[] cars = {"Mercedes", "BMW", "Audi", "Ferrari", "Jaguar"};
+
+    public Car.Car.Car.Car.Car.Car.Car.Car.Iterator getIterator() {
+        return new CarIterator();
+    }
+
+    private class CarIterator implements Car.Car.Car.Car.Car.Car.Car.Car.Iterator {
+        int index;
+        public boolean hasNext() {
+            return index < cars.length;
+        }
+
+        public Object next() {
+            return this.hasNext() ? cars[index++] : null;
+        }
+    }
+}
+public class Car.Car.Car.Car.Car.Car.Car.Car.IteratorPatternDemo {
+    public static void main(String[] args) {
+        Car.Car.Car.Car.Car.Car.Car.Car.CarRepository carRepo = new Car.Car.Car.Car.Car.Car.Car.Car.CarRepository();
+
+        for (Car.Car.Car.Car.Car.Car.Car.Car.Iterator iterator = carRepo.getIterator(); iterator.hasNext();) {
+            String name = (String)iterator.next();
+            System.out.println("ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car : " + name);
+        }
+    }
+}
+
+
+-------------------------------------- MEMENTO --------------------------------------
+public class General.Originator {
+    private String state;
+
+    public String getState() {
+        return state;
+    }
+    public void setState(String state) {
+        this.state = state;
+    }
+    public General.Memento saveStateToMemento() {
+        return new General.Memento(state);
+    }
+    public void getStateFromMemento(General.Memento memento) {
+        state = memento.getState();
+    }
+}
+public class General.Memento {
+    private final String state;
+    public General.Memento(String state) {
+        this.state = state;
+    }
+    public String getState() {
+        return state;
+    }
+}
+import java.util.*;
+
+public class General.CareTaker {
+    private final List<General.Memento> mementoList = new ArrayList<>();
+    public void add(General.Memento state) {
+        mementoList.add(state);
+    }
+    public General.Memento get(int index) {
+        return mementoList.get(index);
+    }
+}
+public class General.MementoDemo {
+    public static void main(String[] args) {
+        General.Originator originator = new General.Originator();
+        General.CareTaker careTaker = new General.CareTaker();
+
+        originator.setState("State 1");
+        careTaker.add(originator.saveStateToMemento()); // Saved state 1 at index 0
+        originator.setState("State 2");
+        careTaker.add(originator.saveStateToMemento()); // Saved state 2 at index 1
+
+        originator.setState("State 3");
+        careTaker.add(originator.saveStateToMemento()); // Saved state 3 at index 2
+
+        originator.setState("State 4");
+        System.out.println("Current State: " + originator.getState());
+
+        originator.getStateFromMemento(careTaker.get(0));
+        System.out.println("First saved state: " + originator.getState());
+
+        originator.getStateFromMemento(careTaker.get(1));
+        System.out.println("Second saved state: " + originator.getState());
+
+        originator.getStateFromMemento(careTaker.get(2));
+        System.out.println("Second saved state: " + originator.getState());
+    }
+}
+
+
+
+-------------------------------------- STATE --------------------------------------
+// Interface for Car.CarState
+interface Car.CarState {
+    void changeGear(ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car car);
+}
+
+// Concrete class for Car.ParkedState
+class Car.ParkedState implements Car.CarState {
+    public void changeGear(ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car car) {
+        // ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car can only change gear when it's not parked
+        System.out.println("Cannot change gear while car is parked.");
+    }
+}
+
+// Concrete class for Car.DriveState
+class Car.DriveState implements Car.CarState {
+    public void changeGear(ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car car) {
+        // ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car can change gear to higher gear when driving at certain speed
+        if (car.getSpeed() < 20) {
+            System.out.println("Cannot change to higher gear when car is moving slowly.");
+        } else if (car.getGear() >= car.getMaxGear()) {
+            System.out.println("Cannot shift to higher gear, already in top gear.");
+        } else {
+            car.setGear(car.getGear() + 1);
+            System.out.println("Changed gear to " + car.getGear());
+        }
+    }
+}
+
+// Concrete class for Car.ReverseState
+class Car.ReverseState implements Car.CarState {
+    public void changeGear(ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car car) {
+        // ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car can only change to reverse gear when speed is 0
+        if (car.getSpeed() > 0) {
+            System.out.println("Cannot shift to reverse gear when car is moving forward.");
+        } else {
+            car.setGear(-1);
+            System.out.println("Changed gear to reverse");
+        }
+    }
+}
+
+// Context class for ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car
+class ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car {
+    private int speed;
+    private int gear;
+    private final int maxGear;
+    private Car.CarState state;
+
+    public ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car(int maxGear) {
+        this.speed = 0;
+        this.gear = 0;
+        this.maxGear = maxGear;
+        this.state = new Car.ParkedState(); // By Default every car is in Parked State
+    }
+
+    public void changeGear() {
+        this.state.changeGear(this);
+    }
+
+    // Getters and setters for speed, gear, and maxGear
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+    public int getSpeed() {
+        return this.speed;
+    }
+    public void setGear(int gear) {
+        this.gear = gear;
+    }
+    public int getGear() {
+        return this.gear;
+    }
+    public int getMaxGear() {
+        return this.maxGear;
+    }
+
+    // Method to set the state of the car
+    public void setState(Car.CarState state) {
+        this.state = state;
+    }
+}
+
+// Example usage
+public class MediaPlayer.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Main {
+    public static void main(String[] args) {
+        ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car car = new ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car(4);
+
+        // ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car starts in parked state
+        car.changeGear(); // Output: "Cannot change gear while car is parked."
+
+        // ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car can shift to reverse gear when speed is 0
+        car.setState(new Car.ReverseState());
+        car.changeGear(); // Output: "Changed gear to reverse"
+
+        // ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car cannot shift to higher gear when moving slowly
+        car.setState(new Car.DriveState());
+        car.setSpeed(10);
+        car.changeGear(); // Output: "Cannot change to higher gear when car is moving slowly."
+
+        // ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car can shift to higher gear when moving at certain speed
+        car.setSpeed(25);
+        car.changeGear(); // Output: "Changed gear to 0"
+        car.changeGear(); // Output: "Changed gear to 1"
+        car.changeGear(); // Output: "Changed gear to 2"
+        car.changeGear(); // Output: "Changed gear to 3"
+        car.changeGear(); // Output: "Changed gear to 4"
+
+        // ColorCar.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car.Car cannot shift to higher gear when already in top gear
+        car.changeGear(); // Output: "Cannot shift to higher gear, already in top gear"
+    }
+}
+
+
+
+
+-------------------------------------- OBSERVER --------------------------------------
+
+import java.util.*;
+public class Channel {
+    private List<Subscriber> subs = new ArrayList<>();
+    String title;
+
+    public void subscribe(Subscriber sub) {
+        subs.add(sub);
+    }
+    public void unSubscribe(Subscriber sub) {
+        subs.remove(sub);
+    }
+    public void notifySubscribers() {
+        for (Subscriber sub: subs) {
+            sub.update();
+        }
+    }
+    public void upload(String title) {
+        this.title = title;
+        notifySubscribers();
+    }
+}
+public class Subscriber {
+    String name;
+    private Channel channel = new Channel();
+
+    public Subscriber(String name) {
+        this.name = name;
+    }
+    public void update() {
+        System.out.println("Hey! " + name + " video uploaded -> " + channel.title);
+    }
+    public void subscribeChannel(Channel ch) {
+        channel = ch;
+    }
+}
+public class Youtube {
+    public static void main(String[] args) {
+        Channel telusko = new Channel();
+        Subscriber s1 = new Subscriber("Akshay");
+        Subscriber s2 = new Subscriber("Sahil");
+        Subscriber s3 = new Subscriber("Adit");
+        Subscriber s4 = new Subscriber("Pravin");
+        Subscriber s5 = new Subscriber("Vishal");
+
+        telusko.subscribe(s1);
+        telusko.subscribe(s2);
+        telusko.subscribe(s3);
+        telusko.subscribe(s4);
+        telusko.subscribe(s5);
+
+        telusko.unSubscribe(s3);
+
+        s1.subscribeChannel(telusko);
+        s2.subscribeChannel(telusko);
+        s3.subscribeChannel(telusko);
+        s4.subscribeChannel(telusko);
+        s5.subscribeChannel(telusko);
+
+        telusko.upload("How to Learn Programming?");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+CLASS DIAGRAM
++ public
+- private
+# protected
+_ static
+A final
